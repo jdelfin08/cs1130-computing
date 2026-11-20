@@ -7,18 +7,71 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-  <h1>CS 1130 – Introduction to Computing</h1>
-  <p>Student: Jeremiah O. Delfin</p>
-  <p>Section: CS 1B</p>
-  </header>
-  
-  <h2>Assignments</h2>
-  <ul class="menu">
-    <li><a href="assignment1.html">Assignment #1 – Conversions</a></li>
-    <li><a href="assignment2.html">Assignment #2 – Income Tax Calculator</a></li>
-    <li><a href="assignment3.html">Assignment #3 – Factorial, Sum and Average</a></li>
-    <li><a href="assignment4.html">Assignment #4 – Simple Payroll</a></li>
-  </ul>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="index.html">CS 1130</a>
+      <nav class="pill">
+        <a href="assignment1.html">Conversions</a>
+        <a href="assignment2.html">Income Tax</a>
+        <a href="assignment3.html">Loops</a>
+        <a href="assignment4.html">Payroll</a>
+      </nav>
+      <a class="btn dark" href="assignment1.html">Start</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Code that thinks<br><em>one step at a time.</em></h1>
+        <p class="lead">My JavaScript assignments for Introduction to Computing: conversions, income tax, loops and payroll.</p>
+        <div class="actions">
+          <a class="btn dark" href="assignment1.html">Start with Assignment 1 &rarr;</a>
+          <a class="btn light" href="#assignments">See all four</a>
+        </div>
+
+        <div class="float left">
+          <span class="icon">{ }</span>
+          <h3>Input in, answer out.</h3>
+          <p>Type a number, press a button.</p>
+        </div>
+        <div class="float right c3">
+          <span class="icon">&#8635;</span>
+          <h3>Loops, logic and math.</h3>
+          <p>while, do...while and for.</p>
+        </div>
+      </section>
+
+      <section class="cards" id="assignments">
+        <a class="card c1" href="assignment1.html">
+          <span class="icon">&deg;</span>
+          <small>Assignment 1</small>
+          <h3>Conversions</h3>
+          <p>Celsius, Fahrenheit, meters and feet.</p>
+        </a>
+        <a class="card c2" href="assignment2.html">
+          <span class="icon">%</span>
+          <small>Assignment 2</small>
+          <h3>Income tax</h3>
+          <p>Find the bracket and the tax due.</p>
+        </a>
+        <a class="card c3" href="assignment3.html">
+          <span class="icon">&Sigma;</span>
+          <small>Assignment 3</small>
+          <h3>Loops</h3>
+          <p>Factorial, sum and average of N.</p>
+        </a>
+        <a class="card c4" href="assignment4.html">
+          <span class="icon">&#8369;</span>
+          <small>Assignment 4</small>
+          <h3>Payroll</h3>
+          <p>Gross pay, deductions and net pay.</p>
+        </a>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span>Student: YOUR NAME HERE</span>
+      <span>CS 1130 &middot; Ateneo de Davao University</span>
+    </footer>
+  </div>
 </body>
 </html>
