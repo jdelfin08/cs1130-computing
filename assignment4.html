@@ -4,18 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Assignment #4 – Simple Payroll</title>
-  <style>
-    body { font-family: Georgia, serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #222; line-height: 1.6; }
-    .box { border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; margin: 16px 0; }
-    label { display: block; margin-top: 8px; }
-    input { padding: 6px; width: 180px; }
-    button { padding: 6px 12px; margin-top: 12px; cursor: pointer; }
-    table { border-collapse: collapse; width: 100%; }
-    td { padding: 6px 8px; border-bottom: 1px solid #ddd; }
-    td:last-child { text-align: right; }
-    .total td { font-weight: bold; color: #1f4e78; border-top: 2px solid #1f4e78; }
-    .error { color: #b00020; font-weight: bold; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Assignment #4 – Simple Payroll</h1>
@@ -35,81 +24,8 @@
     <p class="error" id="error"></p>
   </div>
 
-  <div class="box" id="payslip" style="display:none;"></div>
+  <div class="box" id="payslip"></div>
 
-  <script>
-    // ASSUMPTIONS: change these to match the rules from your instructor.
-    var REGULAR_HOURS = 40;      
-    var OVERTIME_MULT = 1.25;    
-    var SSS_RATE = 0.045;        
-    var PHILHEALTH_RATE = 0.025; 
-    var PAGIBIG_RATE = 0.02;     
-    var PAGIBIG_MAX = 200;      
-
-   
-    function money(amount) {
-      return "PHP " + amount.toLocaleString("en-PH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    }
-
-    function computePayroll() {
-      document.getElementById("error").innerHTML = "";
-      document.getElementById("payslip").style.display = "none";
-
-     
-      var name = document.getElementById("name").value;
-      var hours = parseFloat(document.getElementById("hours").value);
-      var rate = parseFloat(document.getElementById("rate").value);
-
-    
-      if (name.trim() === "") {
-        document.getElementById("error").innerHTML = "Please enter the employee's name.";
-        return;
-      }
-      if (isNaN(hours) || hours < 0 || isNaN(rate) || rate <= 0) {
-        document.getElementById("error").innerHTML = "Please enter valid hours (0 or more) and a pay rate above 0.";
-        return;
-      }
-
-      
-      var regularHours = hours;
-      var overtimeHours = 0;
-      if (hours > REGULAR_HOURS) {
-        regularHours = REGULAR_HOURS;
-        overtimeHours = hours - REGULAR_HOURS;
-      }
-
-   
-      var regularPay = regularHours * rate;
-      var overtimePay = overtimeHours * rate * OVERTIME_MULT;
-      var grossPay = regularPay + overtimePay;
-
-    
-      var sss = grossPay * SSS_RATE;
-      var philhealth = grossPay * PHILHEALTH_RATE;
-      var pagibig = grossPay * PAGIBIG_RATE;
-      if (pagibig > PAGIBIG_MAX) {
-        pagibig = PAGIBIG_MAX;
-      }
-      var totalDeductions = sss + philhealth + pagibig;
-
-      
-      var netPay = grossPay - totalDeductions;
-
-     
-      var html = "<h2>Payslip: " + name + "</h2><table>" +
-        "<tr><td>Regular pay (" + regularHours + " hrs)</td><td>" + money(regularPay) + "</td></tr>" +
-        "<tr><td>Overtime pay (" + overtimeHours + " hrs)</td><td>" + money(overtimePay) + "</td></tr>" +
-        "<tr><td><strong>Gross pay</strong></td><td><strong>" + money(grossPay) + "</strong></td></tr>" +
-        "<tr><td>SSS</td><td>- " + money(sss) + "</td></tr>" +
-        "<tr><td>PhilHealth</td><td>- " + money(philhealth) + "</td></tr>" +
-        "<tr><td>Pag-IBIG</td><td>- " + money(pagibig) + "</td></tr>" +
-        "<tr><td><strong>Total deductions</strong></td><td><strong>- " + money(totalDeductions) + "</strong></td></tr>" +
-        "<tr class='total'><td>NET PAY</td><td>" + money(netPay) + "</td></tr>" +
-        "</table>";
-      var payslip = document.getElementById("payslip");
-      payslip.innerHTML = html;
-      payslip.style.display = "block";
-    }
-  </script>
+  <script src="assignment4.js"></script>
 </body>
 </html>
