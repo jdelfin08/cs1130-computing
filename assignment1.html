@@ -6,37 +6,68 @@
   <title>Assignment #1 – Conversions</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Conversions</h1>
-  <p><a href="index.html">Back to home</a></p>
+<body class="p1">
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="index.html">CS 1130</a>
+      <nav class="pill">
+        <a class="active" href="assignment1.html">Conversions</a>
+        <a href="assignment2.html">Income Tax</a>
+        <a href="assignment3.html">Loops</a>
+        <a href="assignment4.html">Payroll</a>
+      </nav>
+      <a class="btn dark" href="index.html">Home</a>
+    </header>
 
-  <!-- Each box has: an input, a button, and an empty line where the answer will appear -->
-  <div class="box">
-    <h2>Celsius to Fahrenheit</h2>
-    <input type="number" id="c2f" placeholder="Celsius">
-    <button onclick="celsiusToFahrenheit()">Convert</button>
-    <p class="result" id="c2fResult"></p>
-  </div>
+    <main>
+      <section class="page-head">
+        <h1>Conversions<br><em>made simple.</em></h1>
+        <p>Temperature and distance, converted with one click.</p>
+      </section>
 
-  <div class="box">
-    <h2>Fahrenheit to Celsius</h2>
-    <input type="number" id="f2c" placeholder="Fahrenheit">
-    <button onclick="fahrenheitToCelsius()">Convert</button>
-    <p class="result" id="f2cResult"></p>
-  </div>
+      <section class="grid2">
+        <div class="panel">
+          <div class="panel-head"><span class="icon">&deg;C</span><h2>Celsius to Fahrenheit</h2></div>
+          <div class="row">
+            <input type="number" id="c2f" placeholder="Celsius">
+            <button class="btn dark" onclick="celsiusToFahrenheit()">Convert</button>
+          </div>
+          <p class="result" id="c2fResult"></p>
+        </div>
 
-  <div class="box">
-    <h2>Meters to Feet</h2>
-    <input type="number" id="m2f" placeholder="Meters">
-    <button onclick="metersToFeet()">Convert</button>
-    <p class="result" id="m2fResult"></p>
-  </div>
+        <div class="panel">
+          <div class="panel-head"><span class="icon">&deg;F</span><h2>Fahrenheit to Celsius</h2></div>
+          <div class="row">
+            <input type="number" id="f2c" placeholder="Fahrenheit">
+            <button class="btn dark" onclick="fahrenheitToCelsius()">Convert</button>
+          </div>
+          <p class="result" id="f2cResult"></p>
+        </div>
 
-  <div class="box">
-    <h2>Feet to Meters</h2>
-    <input type="number" id="f2m" placeholder="Feet">
-    <button onclick="feetToMeters()">Convert</button>
-    <p class="result" id="f2mResult"></p>
+        <div class="panel">
+          <div class="panel-head"><span class="icon">m</span><h2>Meters to Feet</h2></div>
+          <div class="row">
+            <input type="number" id="m2f" placeholder="Meters">
+            <button class="btn dark" onclick="metersToFeet()">Convert</button>
+          </div>
+          <p class="result" id="m2fResult"></p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><span class="icon">ft</span><h2>Feet to Meters</h2></div>
+          <div class="row">
+            <input type="number" id="f2m" placeholder="Feet">
+            <button class="btn dark" onclick="feetToMeters()">Convert</button>
+          </div>
+          <p class="result" id="f2mResult"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span>Student: YOUR NAME HERE</span>
+      <span>CS 1130 &middot; Ateneo de Davao University</span>
+    </footer>
   </div>
 
   <script src="assignment1.js"></script>
