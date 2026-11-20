@@ -1,1 +1,90 @@
-<h1>=Conversion=</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment #1 – Conversions</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #222; line-height: 1.6; }
+    .box { border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; margin: 16px 0; }
+    input { padding: 6px; width: 120px; }
+    button { padding: 6px 12px; cursor: pointer; }
+    .result { font-weight: bold; margin-top: 8px; color: #1f4e78; }
+  </style>
+</head>
+<body>
+  <h1>Assignment #1 – Conversions</h1>
+  <p><a href="index.html">Back to home</a></p>
+
+  <!-- Each box has: an input, a button, and an empty line where the answer will appear -->
+  <div class="box">
+    <h2>Celsius to Fahrenheit</h2>
+    <input type="number" id="c2f" placeholder="Celsius">
+    <button onclick="celsiusToFahrenheit()">Convert</button>
+    <p class="result" id="c2fResult"></p>
+  </div>
+
+  <div class="box">
+    <h2>Fahrenheit to Celsius</h2>
+    <input type="number" id="f2c" placeholder="Fahrenheit">
+    <button onclick="fahrenheitToCelsius()">Convert</button>
+    <p class="result" id="f2cResult"></p>
+  </div>
+
+  <div class="box">
+    <h2>Meters to Feet</h2>
+    <input type="number" id="m2f" placeholder="Meters">
+    <button onclick="metersToFeet()">Convert</button>
+    <p class="result" id="m2fResult"></p>
+  </div>
+
+  <div class="box">
+    <h2>Feet to Meters</h2>
+    <input type="number" id="f2m" placeholder="Feet">
+    <button onclick="feetToMeters()">Convert</button>
+    <p class="result" id="f2mResult"></p>
+  </div>
+
+  <script>
+    // Reads a number from an input box. Returns null if the box is empty.
+    function readNumber(id) {
+      var text = document.getElementById(id).value;
+      if (text === "") { return null; }
+      return parseFloat(text);
+    }
+
+    // Shows a message in the result line under a box.
+    function show(id, message) {
+      document.getElementById(id).innerHTML = message;
+    }
+
+    function celsiusToFahrenheit() {
+      var c = readNumber("c2f");
+      if (c === null) { show("c2fResult", "Please enter a number."); return; }
+      var f = c * 9 / 5 + 32;
+      show("c2fResult", c + " °C = " + f.toFixed(2) + " °F");
+    }
+
+    function fahrenheitToCelsius() {
+      var f = readNumber("f2c");
+      if (f === null) { show("f2cResult", "Please enter a number."); return; }
+      var c = (f - 32) * 5 / 9;
+      show("f2cResult", f + " °F = " + c.toFixed(2) + " °C");
+    }
+
+    function metersToFeet() {
+      var m = readNumber("m2f");
+      if (m === null) { show("m2fResult", "Please enter a number."); return; }
+      var ft = m * 3.28084;
+      show("m2fResult", m + " m = " + ft.toFixed(2) + " ft");
+    }
+
+    function feetToMeters() {
+      var ft = readNumber("f2m");
+      if (ft === null) { show("f2mResult", "Please enter a number."); return; }
+      var m = ft / 3.28084;
+      show("f2mResult", ft + " ft = " + m.toFixed(2) + " m");
+    }
+  </script>
+</body>
+</html>
