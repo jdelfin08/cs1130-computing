@@ -1,11 +1,9 @@
-// Reads a number from an input box. Returns null if the box is empty.
 function readNumber(id) {
   var text = document.getElementById(id).value;
   if (text === "") { return null; }
   return parseFloat(text);
 }
 
-// Shows a message in the result line under a box.
 function show(id, message) {
   document.getElementById(id).innerHTML = message;
 }
