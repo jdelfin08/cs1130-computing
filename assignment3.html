@@ -1,1 +1,85 @@
-<h1>=Factorial=</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment #3 – Factorial, Sum and Average</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #222; line-height: 1.6; }
+    .box { border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; margin: 16px 0; }
+    input { padding: 6px; width: 120px; }
+    button { padding: 6px 12px; cursor: pointer; }
+    .result { font-weight: bold; color: #1f4e78; margin: 6px 0; }
+    .error { color: #b00020; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Assignment #3 – First N Natural Numbers</h1>
+  <p><a href="index.html">Back to home</a></p>
+
+  <div class="box">
+    <label for="n">Enter N (a whole number, 1 or higher):</label><br>
+    <input type="number" id="n" placeholder="N">
+    <button onclick="calculate()">Calculate</button>
+    <p class="error" id="error"></p>
+  </div>
+
+  <div class="box">
+    <p class="result" id="factorialResult"></p>
+    <p class="result" id="sumResult"></p>
+    <p class="result" id="averageResult"></p>
+  </div>
+
+  <script>
+    function calculate() {
+   
+      document.getElementById("error").innerHTML = "";
+      document.getElementById("factorialResult").innerHTML = "";
+      document.getElementById("sumResult").innerHTML = "";
+      document.getElementById("averageResult").innerHTML = "";
+
+      // 1. Read and check the input
+      var text = document.getElementById("n").value;
+      var n = parseFloat(text);
+      if (text === "" || isNaN(n) || n < 1 || n !== Math.floor(n)) {
+        document.getElementById("error").innerHTML = "Please enter a whole number that is 1 or higher.";
+        return;
+      }
+
+    
+      if (n <= 20) {
+        var factorial = 1;
+        var i = 1;
+        while (i <= n) {
+          factorial = factorial * i;
+          i = i + 1;
+        }
+        document.getElementById("factorialResult").innerHTML =
+          "Factorial of " + n + " = " + factorial.toLocaleString();
+      } else {
+        document.getElementById("factorialResult").innerHTML =
+          "Factorial: N is too big to show exactly (use 20 or less).";
+      }
+
+    
+      var sum = 0;
+      var j = 1;
+      do {
+        sum = sum + j;
+        j = j + 1;
+      } while (j <= n);
+      document.getElementById("sumResult").innerHTML =
+        "Sum of the first " + n + " natural numbers = " + sum.toLocaleString();
+
+    
+      var total = 0;
+      for (var k = 1; k <= n; k++) {
+        total = total + k;
+      }
+      var average = total / n;
+      document.getElementById("averageResult").innerHTML =
+        "Average of the first " + n + " natural numbers = " + average.toFixed(2);
+    }
+  </script>
+</body>
+</html>
