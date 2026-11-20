@@ -6,25 +6,54 @@
   <title>Assignment #4 – Simple Payroll</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Simple Payroll</h1>
-  <p><a href="index.html">Back to home</a></p>
+<body class="p4">
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="index.html">CS 1130</a>
+      <nav class="pill">
+        <a href="assignment1.html">Conversions</a>
+        <a href="assignment2.html">Income Tax</a>
+        <a href="assignment3.html">Loops</a>
+        <a class="active" href="assignment4.html">Payroll</a>
+      </nav>
+      <a class="btn dark" href="index.html">Home</a>
+    </header>
 
-  <div class="box">
-    <label for="name">Employee name</label>
-    <input type="text" id="name" placeholder="Name">
+    <main>
+      <section class="page-head">
+        <h1>Simple payroll,<br><em>in one step.</em></h1>
+        <p>Hours and rate in. Gross pay, deductions and net pay out.</p>
+      </section>
 
-    <label for="hours">Hours worked this week</label>
-    <input type="number" id="hours" placeholder="e.g. 45">
+      <div class="panel">
+        <div class="panel-head"><span class="icon">&#8369;</span><h2>Employee details</h2></div>
 
-    <label for="rate">Pay rate per hour (PHP)</label>
-    <input type="number" id="rate" placeholder="e.g. 100">
+        <label for="name">Employee name</label>
+        <input type="text" id="name" placeholder="Name">
 
-    <button onclick="computePayroll()">Compute Pay</button>
-    <p class="error" id="error"></p>
+        <div class="two">
+          <div>
+            <label for="hours">Hours worked this week</label>
+            <input type="number" id="hours" placeholder="e.g. 45">
+          </div>
+          <div>
+            <label for="rate">Pay rate per hour (PHP)</label>
+            <input type="number" id="rate" placeholder="e.g. 100">
+          </div>
+        </div>
+
+        <button class="btn dark spaced" onclick="computePayroll()">Compute pay</button>
+        <p class="error" id="error"></p>
+      </div>
+
+      <div class="panel" id="payslip"></div>
+    </main>
+
+    <footer class="foot">
+      <span>Student: YOUR NAME HERE</span>
+      <span>CS 1130 &middot; Ateneo de Davao University</span>
+    </footer>
   </div>
-
-  <div class="box" id="payslip"></div>
 
   <script src="assignment4.js"></script>
 </body>
