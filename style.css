@@ -1,1 +1,44 @@
+body {
+  font-family: Georgia, serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+  color: #222;
+  line-height: 1.6;
+}
 
+h1 { margin-bottom: 0; }
+.sub { color: #555; margin-top: 4px; }
+
+/* Home page menu links (only inside the list with class "menu") */
+.menu { list-style: none; padding: 0; }
+.menu li { margin: 10px 0; }
+.menu a {
+  display: block;
+  padding: 12px 16px;
+  border: 1px solid #1f4e78;
+  border-radius: 6px;
+  color: #1f4e78;
+  text-decoration: none;
+}
+.menu a:hover, .menu a:focus { background: #1f4e78; color: #fff; }
+
+/* Boxes, inputs and buttons used by the assignment pages */
+.box { border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; margin: 16px 0; }
+label { display: block; margin-top: 8px; }
+input { padding: 6px; width: 180px; }
+button { padding: 6px 12px; margin-top: 8px; cursor: pointer; }
+
+/* Messages */
+.result { font-weight: bold; color: #1f4e78; margin: 6px 0; }
+.error { color: #b00020; font-weight: bold; }
+.note { font-size: 0.9em; color: #555; }
+
+/* Result tables (Assignments 2 and 4) */
+table { border-collapse: collapse; width: 100%; }
+td { padding: 6px 8px; border-bottom: 1px solid #ddd; }
+td:last-child { text-align: right; }
+.total td { font-weight: bold; color: #1f4e78; border-top: 2px solid #1f4e78; }
+
+/* These boxes stay hidden until the JavaScript shows them */
+#resultBox, #payslip { display: none; }
